@@ -11,7 +11,7 @@ public class Hippodrome {
         this.horses = horses;
     }
 
-    public void run() throws Exception{
+    public void run() throws Exception {
         for (int i = 1; i < 101; i++) {
             move();
             print();
@@ -19,15 +19,11 @@ public class Hippodrome {
         }
     }
 
-
-
     public void move() {
         for (int i = 0; i < getHorses().size(); i++) {
             (getHorses()).get(i).move();
         }
     }
-
-
 
     public void print() {
         for (int i = 0; i < getHorses().size(); i++) {
@@ -38,13 +34,26 @@ public class Hippodrome {
         }
     }
 
-
-
     public List<Horse> getHorses() {
         return horses;
     }
 
-    public static void main(String[] args) throws Exception{
+    public Horse getWinner() {
+        int maxdist = 0;
+        for (int i = 0; i < horses.size() - 1; i++) {
+
+            if(horses.get(i).getDistance() > horses.get(i + 1).getDistance()) maxdist = i;
+            else maxdist=i+1;
+        }
+        return horses.get(maxdist);
+    }
+
+    public void printWinner() {
+
+        System.out.println("Winner is " + getWinner().name+"!");
+    }
+
+    public static void main(String[] args) throws Exception {
         Horse Bella = new Horse("Bella", 3, 0);
         Horse Cella = new Horse("Cella", 3, 0);
         Horse Della = new Horse("Della", 3, 0);
@@ -54,6 +63,7 @@ public class Hippodrome {
         newhorse.add(Della);
         game = new Hippodrome(newhorse);
         game.run();
+        game.printWinner();
 
     }
 
