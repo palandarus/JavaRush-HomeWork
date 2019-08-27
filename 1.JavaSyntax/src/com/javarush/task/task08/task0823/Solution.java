@@ -1,11 +1,9 @@
 package com.javarush.task.task08.task0823;
 
-//import com.sun.xml.internal.fastinfoset.util.CharArray;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.HashSet;
+import java.util.ArrayList;
 
 /* 
 Омовение Рамы
@@ -14,21 +12,16 @@ import java.util.HashSet;
 public class Solution {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        String s = reader.readLine();
-        String result="";
-        result=String.valueOf(s.charAt(0)).toUpperCase();
-        for (int i = 1; i < s.length(); i++) {
-            if(s.charAt(i)==32)
-            {
-                result=result+" "+String.valueOf(s.charAt(i+1)).toUpperCase();
-                i++;
+        String string = reader.readLine();
+        String[] list=string.split("\\s");
+        string="";
+        for (int i = 0; i < list.length; i++) {
+            if(list[i]!=""&&!list[i].isEmpty()&&list[i]!=null) {
+                string += list[i].substring(0, 1).toUpperCase() + list[i].substring(1);
+                if (i != list.length - 1) string += " ";
             }
-            else result+=String.valueOf(s.charAt(i));
         }
-        s=result;
-        System.out.println(s);
-
-
-
+        System.out.println(string);
     }
+
 }

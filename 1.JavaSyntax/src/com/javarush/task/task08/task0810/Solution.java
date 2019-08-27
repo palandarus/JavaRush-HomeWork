@@ -11,8 +11,8 @@ import java.util.List;
 
 public class Solution {
     public static void main(String[] args) {
-        System.out.println(getTimeMsOfGet(fill(new ArrayList())));
-        System.out.println(getTimeMsOfGet(fill(new LinkedList())));
+        System.out.println(getGetTimeInMs(fill(new ArrayList())));
+        System.out.println(getGetTimeInMs(fill(new LinkedList())));
     }
 
     public static List fill(List list) {
@@ -22,17 +22,18 @@ public class Solution {
         return list;
     }
 
-    public static long getTimeMsOfGet(List list) {
-        Date timer=new Date();
-        long start=timer.getTime();
+    public static long getGetTimeInMs(List list) {
+        long startTime = System.currentTimeMillis();
         get10000(list);
-        long finish=timer.getTime();
-        return finish-start;
+        long finishTime = System.currentTimeMillis();
+        return finishTime-startTime;
 
     }
 
     public static void get10000(List list) {
-        if (list.isEmpty()) return;
+        if (list.isEmpty()) {
+            return;
+        }
         int x = list.size() / 2;
 
         for (int i = 0; i < 10000; i++) {
