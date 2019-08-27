@@ -18,7 +18,7 @@ public class Solution {
     }
 
     public static String getQuery(Map<String, String> params) {
-        String format = "%s = '%s' ", result = "";
+        String format = "%s = '%s'", result = "";
         StringBuilder stringBuilder = new StringBuilder();
         for (Map.Entry x : params.entrySet()) {
             if (x.getValue() != null) {
