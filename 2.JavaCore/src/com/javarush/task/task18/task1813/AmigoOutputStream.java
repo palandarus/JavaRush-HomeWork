@@ -10,7 +10,8 @@ AmigoOutputStream
 */
 
 public class AmigoOutputStream extends FileOutputStream {
-    public static String fileName = "C:/tmp/result.txt";
+//    public static String fileName = "C:/tmp/result.txt";
+    public static String fileName = "C:/1.txt";
     private FileOutputStream file;
 
     public AmigoOutputStream(FileOutputStream file) throws FileNotFoundException {
@@ -47,7 +48,6 @@ public class AmigoOutputStream extends FileOutputStream {
 
     public static void main(String[] args) throws FileNotFoundException {
         new AmigoOutputStream(new FileOutputStream(fileName));
-
     }
 
 }
