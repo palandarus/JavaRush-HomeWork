@@ -142,8 +142,6 @@ public class Room {
     }
 
 
-
-
     public static Room game;
 
     public static void main(String[] args) {
@@ -152,7 +150,6 @@ public class Room {
         game.createMouse();
         game.run();
     }
-
 
     private int initialDelay = 520;
     private int delayStep = 20;
